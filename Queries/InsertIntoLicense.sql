@@ -1,0 +1,2 @@
+﻿INSERT INTO License ([Product], [LicenseType], [LicenseCount],[Database], [DateCreated], [ExpiryDate], [CustomersId], [LicenseTypeEnumid], [Comment])
+VALUES (@product, @licensetype, @licensecount, @database, @datecreated, @expirydate, @customerid, @licensetypeenumid, @comment)
