@@ -26,6 +26,10 @@ namespace LicenseServer.Controllers
             {
                 var u = new SecurityAccess(config);
                 var pass = u.GetPassport(User.Identity.Name);
+                if (!pass.SignedIn)
+                {
+                   return "Faild to authenticate!";
+                }
                 if (LicenseAccess.IsProductAndTypeExist(model, pass))
                 {
                     return LicenseAccess.GenerateNewLicense(model, pass, config);

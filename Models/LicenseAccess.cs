@@ -182,6 +182,9 @@ namespace LicenseServer.Models
             var Id = Convert.ToInt32(DecryptKey(model.LicenseKey, LicEncryptionKey));
             var conn = new SqlConnection(pass.ConnectionString);
             conn.Open();
+            //update active count anytime you validate license
+            UpdateActiveCount(conn, model, Id);
+            //return all license details
             var lic = ReturnLicenseDetails(conn, Id);
             //first check if license exist in the database
             if (lic.rowCount == 0)
@@ -214,7 +217,7 @@ namespace LicenseServer.Models
             {
                 lic.valid = true;
                 lic.Message = "This license is valid";
-                UpdateActiveCount(conn, model, Id);
+                //UpdateActiveCount(conn, model, Id);
             }
             else
             {

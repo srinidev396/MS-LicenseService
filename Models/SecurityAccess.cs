@@ -28,19 +28,10 @@ namespace LicenseServer.Models
         public Passport GetPassport(string userdata)
         {
             var passport = new Passport();
-            try
-            {
-                var data = Encrypt.DecryptParameters(userdata);
-                var ud = JsonConvert.DeserializeObject<UserData>(data);
-                passport.SignIn(ud.UserName, "3kszs932ksdjjdjwqp00qkksj", string.Empty, sqlServername, ud.Database, sqlUsername, sqlPassword);
-              
-            }
-            catch (Exception ex)
-            {
-                LogErrorMessages.LogErrorMessage(ex);
-            }
 
-
+            var data = Encrypt.DecryptParameters(userdata);
+            var ud = JsonConvert.DeserializeObject<UserData>(data);
+            passport.SignIn(ud.UserName, "3kszs932ksdjjdjwqp00qkksj", string.Empty, sqlServername, ud.Database, sqlUsername, sqlPassword);
             return passport;
         }
 
@@ -60,7 +51,7 @@ namespace LicenseServer.Models
 
     }
 
-    
-    
+
+
 
 }
