@@ -16,6 +16,7 @@ using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using System.Net.Mail;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.DataProtection.KeyManagement;
 
 namespace LicenseServer.Models
 {
@@ -227,7 +228,6 @@ namespace LicenseServer.Models
             conn.Close();
             return lic;
         }
-
         private static void UpdateActiveCount(SqlConnection conn, LicenseValidation model, int id)
         {
             var cmd1 = new SqlCommand("UPDATE License SET ActiveCount = @activecount  WHERE id = @id", conn);
@@ -325,7 +325,7 @@ namespace LicenseServer.Models
             cmdcontact.Parameters.AddWithValue("@customerid", newId);
             cmdcontact.ExecuteNonQuery();
         }
-        private static string InsertIntoLicense(SqlConnection conn, SqlTransaction transaction, GenerateNewLicense model, IConfiguration config, int newId)
+        internal static string InsertIntoLicense(SqlConnection conn, SqlTransaction transaction, GenerateNewLicense model, IConfiguration config, int newId)
         {
             //insert new license
             var cmdlicense = new SqlCommand(Resources.InsertIntoLicense, conn, transaction);
@@ -354,6 +354,7 @@ namespace LicenseServer.Models
 
             return licensekeyAndAuth;
         }
+        
         //private static void InsertIntoLicense(SqlConnection conn, SqlTransaction transaction, GenerateNewLicense model, string licenseKey, int newId)
         //{
         //    var cmdlicense = new SqlCommand(Resources.InsertIntoLicense, conn, transaction);
@@ -483,7 +484,84 @@ namespace LicenseServer.Models
     {
         public int EnumId { get; set; }
         public string Name { get; set; }
+    }
+    public class CustomersModel
+    {
+
+        public CustomersModel()
+        {
+            listofName = new List<string>();  
+        }
+        public List<string> listofName { get; set; }
+        public bool IsError { get; set; }
+        public string Message { get; set; }
+        public int customerId { get; set; }
+        public bool IsCustomerFound { get; set; }
+        public string CustomerName { get; set; }    
+
+        public List<string> GetCustomerList(string key, Passport pass)
+        {
+            var table = new DataTable();
+            var conn = new SqlConnection(pass.ConnectionString);
+            conn.Open();
+            var cmd = new SqlCommand("select * from Customers where CompanyName like '%' + @key + '%'", conn);
+            cmd.Parameters.AddWithValue("@key", key);
+            var adp = new SqlDataAdapter(cmd);
+            adp.Fill(table);
+            conn.Close();
+            foreach (DataRow row in table.Rows)
+            {
+                listofName.Add(row.Field<string>("CompanyName"));
+            }
+
+            return listofName;
+        }
+        public CustomersModel IsCustomerExist(string name, Passport pass)
+        {
+            var cs = new CustomersModel();
+            var table = new DataTable();
+            var conn = new SqlConnection(pass.ConnectionString);
+            conn.Open();
+            var cmd = new SqlCommand("select * from Customers where CompanyName = @name", conn);
+            cmd.Parameters.AddWithValue("@name", name.Trim());
+            var adp = new SqlDataAdapter(cmd);
+            adp.Fill(table);
+            if(table.Rows.Count == 1)
+            {
+                cs.IsCustomerFound = true;
+                cs.CustomerName = table.Rows[0].Field<string>("CompanyName");
+                cs.customerId = table.Rows[0].Field<int>("Id");
+            }
+            else if(table.Rows.Count > 1)
+            {
+                cs.IsError = true;
+                cs.Message = $"duplicate customer name. Customer with the same name {name} appeared {table.Rows.Count} in the database!";
+            }
+            else
+            {
+                cs.IsCustomerFound = false;
+                cs.Message = "No customer found";
+            }
+          
+            conn.Close();
+            return cs;
+           
+        }
+        public string GenerateLicenseToExistCustomer(GenerateNewLicense model, IConfiguration config, Passport pass)
+        {
+            string licensekey = string.Empty;
+            var cs = new CustomersModel();
+            var conn = new SqlConnection(pass.ConnectionString);
+            conn.Open();
+            var transaction = conn.BeginTransaction();
+            licensekey = LicenseAccess.InsertIntoLicense(conn, transaction, model, config, model.CustomerId);
+            transaction.Commit();
+            conn.Close();
+
+            return licensekey;
+        }
 
     }
+
 
 }
