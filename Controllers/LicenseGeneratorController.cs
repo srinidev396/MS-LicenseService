@@ -151,10 +151,20 @@ namespace LicenseServer.Controllers
         {
             var cs = new CustomersModel();
             var u = new SecurityAccess(config);
+
             try
             {
                 var pass = u.GetPassport(User.Identity.Name);
-                cs.Message = cs.GenerateLicenseToExistCustomer(model, config, pass);
+                if(cs.IsCustomerExist(model.CompanyName, pass).IsCustomerFound)
+                {
+                    cs.Message = cs.GenerateLicenseToExistCustomer(model, config, pass);
+                }
+                else
+                {
+                    cs.IsCustomerFound = false;
+                    cs.Message = "Customer not found";
+                }
+                
             }
             catch(Exception ex)
             {
