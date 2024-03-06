@@ -61,9 +61,14 @@ namespace LicenseServer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT a.CompanyName, b.LicenseType, b.SqlServer, b.LicenseKey FROM Customers a
-        ///JOIN License b ON a.Id = b.CustomersId
-        ///WHERE a.Id = @id.
+        ///   Looks up a localized string similar to SELECT * FROM License a
+        ///JOIN Customers b on a.CustomersId = b.id
+        ///WHERE a.id = @Id
+        ///
+        ///
+        ///--SELECT * FROM Customers a
+        ///--JOIN License b ON a.Id = b.CustomersId
+        ///--WHERE a.Id = @id.
         /// </summary>
         internal static string GetLicensDetails {
             get {
@@ -82,8 +87,25 @@ namespace LicenseServer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to INSERT INTO Customers ([CompanyName],[Address],[DateCreated],[City],[StateProvince],[Country],[ZipCode]) 
-        ///VALUEs (@companyName,@address,@datecreated,@city,@stateprovice,@country,@zipcode)
+        ///   Looks up a localized string similar to INSERT INTO [dbo].[LCCustomers]
+        ///           ([CompanyName]
+        ///           ,[Address]
+        ///           ,[DateCreated]
+        ///           ,[City]
+        ///           ,[StateProvince]
+        ///           ,[Country]
+        ///           ,[Commnet]
+        ///           ,[ZipCode])
+        ///     VALUES (companyName,
+        ///	         [@address],
+        ///			 @dateCreated,
+        ///			 @city,
+        ///			 @stateprovince,
+        ///			 @country,
+        ///			 @comment,
+        ///			 @zipcode)
+        ///
+        ///
         ///.
         /// </summary>
         internal static string InsertIntoCustomer {
@@ -93,17 +115,25 @@ namespace LicenseServer.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to INSERT INTO License ([Product], [LicenseType], [LicenseKey], [LicenseCount],[Database], [DateCreated], [ExpiryDate], [CustomersId])
-        ///VALUES (@product, @licensetype, @licensekey, @licensecount, @database, @datecreated, @expirydate, @customerid).
+        ///   Looks up a localized string similar to INSERT INTO LCFusionRMSLicense ([LicenseCount], [ActiveCount], [DateCreated], [ExpiryDate], [DatabaseKey], [LCCustomersId], [LicenseType], [ProductName], [LicenseKey])
+        ///VALUES (@licensecount,
+        ///        @activecount,
+        ///        @datecreated,
+        ///        @expirydate,
+        ///        @databasekey,
+        ///        @customerid,
+        ///        @licensetype,
+        ///        @productname,
+        ///        @licensekey).
         /// </summary>
-        internal static string InsertIntoLicense {
+        internal static string InsertIntoFusionRMSLicense {
             get {
-                return ResourceManager.GetString("InsertIntoLicense", resourceCulture);
+                return ResourceManager.GetString("InsertIntoFusionRMSLicense", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to select count(*) from TabProductList a 
+        ///   Looks up a localized string similar to select a.ProductName, b.TypeName from TabProductList a 
         ///join licenseType b on a.[Id] = b.[TabProductListId]
         ///where a.Id = @productid and b.Enum = @enumid
         ///.

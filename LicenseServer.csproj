@@ -17,9 +17,11 @@
   <ItemGroup>
     <Compile Remove="Controllers\DataFunction.cs" />
     <Compile Remove="Controllers\GenerateToken.cs" />
+    <Compile Remove="Controllers\LicenseGeneratorController.cs" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.28" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.3.1" />

@@ -127,8 +127,8 @@
   <data name="InsertIntoCustomer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Queries\InsertIntoCustomer.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="InsertIntoLicense" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Queries\InsertIntoLicense.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  <data name="InsertIntoFusionRMSLicense" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Queries\InsertIntoFusionRMSLicense.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="IsProductAndTypeExist" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Queries\IsProductAndTypeExist.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

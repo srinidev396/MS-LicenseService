@@ -1,2 +1,19 @@
-﻿INSERT INTO Customers ([CompanyName],[Address],[DateCreated],[City],[StateProvince],[Country],[ZipCode]) 
-VALUEs (@companyName,@address,@datecreated,@city,@stateprovice,@country,@zipcode)
+﻿INSERT INTO [dbo].[LCCustomers]
+           ([CompanyName]
+           ,[Address]
+           ,[DateCreated]
+           ,[City]
+           ,[StateProvince]
+           ,[Country]
+           ,[Commnet]
+           ,[ZipCode])
+     VALUES (@CompanyName,
+	         @Address,
+			 @DateCreated,
+			 @City,
+			 @StateProvince,
+			 @Country,
+			 @Comment,
+			 @ZipCode)
+
+

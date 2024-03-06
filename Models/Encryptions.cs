@@ -20,11 +20,12 @@ using Microsoft.AspNetCore.DataProtection.KeyManagement;
 
 namespace LicenseServer.Models
 {
-    public class LicenseAccess
+    public class Encryptions
     {
         private const string LicEncryptionKey = "TABLicSA2V66WTEKey";
         private const string AutEncryptionKey = "TABAutSD2V77WTEKey";
-        private static string EncryptKey(string clearText, string encryKey)
+        public  const string  FusionRMSkeyEncryption = "TABsqlD2V77WTEKey";
+        public static string EncryptKey(string clearText, string encryKey)
         {
             try
             {
@@ -54,7 +55,7 @@ namespace LicenseServer.Models
             }
             return clearText;
         }
-        private static string DecryptKey(string cipherText, string encryKey)
+        public static string DecryptKey(string cipherText, string encryKey)
         {
             try
             {
@@ -328,7 +329,7 @@ namespace LicenseServer.Models
         internal static string InsertIntoLicense(SqlConnection conn, SqlTransaction transaction, GenerateNewLicense model, IConfiguration config, int newId)
         {
             //insert new license
-            var cmdlicense = new SqlCommand(Resources.InsertIntoLicense, conn, transaction);
+            var cmdlicense = new SqlCommand("", conn, transaction);
             cmdlicense.Parameters.AddWithValue("@product", model.ProductName);
             cmdlicense.Parameters.AddWithValue("@licensetype", model.LicenseType);
             //cmdlicense.Parameters.AddWithValue("@licensekey", licenseKey);
@@ -554,7 +555,7 @@ namespace LicenseServer.Models
             var conn = new SqlConnection(pass.ConnectionString);
             conn.Open();
             var transaction = conn.BeginTransaction();
-            licensekey = LicenseAccess.InsertIntoLicense(conn, transaction, model, config, model.CustomerId);
+            licensekey = Encryptions.InsertIntoLicense(conn, transaction, model, config, model.CustomerId);
             transaction.Commit();
             conn.Close();
 
