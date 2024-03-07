@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using Dapper;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
+using Microsoft.Extensions.Logging;
 
 namespace LicenseServer.Controllers
 {
@@ -19,9 +20,12 @@ namespace LicenseServer.Controllers
     public class FusionRMSLicenseController : ControllerBase
     {
         private IConfiguration config;
-        public FusionRMSLicenseController(IConfiguration config)
+        private ILogger<FusionRMSValidationController> _logger;
+        public FusionRMSLicenseController(IConfiguration config, ILogger<FusionRMSValidationController> logger)
         {
             this.config = config;
+            _logger = logger;
+
         }
         [HttpPost("GenerateFusionRMSLicense")]
         public async Task<JsonReturn> GenerateFusionRMSLicense(UserInterfaceModel model)
@@ -57,6 +61,7 @@ namespace LicenseServer.Controllers
                 jsr.IsError = true;
                 jsr.ErrorType = ErrorType.Exception;
                 jsr.Message = ex.Message;
+                _logger.LogError(ex.Message, ex);
             }
 
             return jsr;
@@ -81,6 +86,7 @@ namespace LicenseServer.Controllers
                 jsr.IsError = true;
                 jsr.ErrorType = ErrorType.General;
                 jsr.Message = ex.Message;
+                _logger.LogError(ex.Message, ex);
             }
             return jsr;
         }
@@ -97,18 +103,5 @@ namespace LicenseServer.Controllers
             }
         }
 
-        //FusionRMS calls
-        [HttpGet("GetListOfRegisterDatabases")]
-        public async Task<List<string>> GetListOfRegisterDatabases()
-        {
-            using (var conn = new SqlConnection()
-            {
-
-            }
-        }
-        public async Task ValidateFusionRMSLicense(string key)
-        {
-
-        }
     }
 }

@@ -55,7 +55,7 @@ namespace LicenseServer.Controllers
                 {
                     return $"4060{ex.Message}";
                 }
-                LogErrorMessages.LogErrorMessage(ex);
+                
             }
 
             var jw = new JwtService(m);

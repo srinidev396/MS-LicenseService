@@ -15,6 +15,8 @@ using LicenseServer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using NLog.Extensions.Logging;
+using NLog;
 
 namespace LicenseServer
 {
@@ -23,6 +25,7 @@ namespace LicenseServer
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            LogManager.Configuration = new NLogLoggingConfiguration(configuration.GetSection("NLog"));
         }
 
         public IConfiguration Configuration { get; }
@@ -40,7 +43,12 @@ namespace LicenseServer
                     builder.WithHeaders(Configuration["WithHeaders"]);
                 });
             });
-          
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.ClearProviders();
+                loggingBuilder.AddNLog();
+            });
+
             services.AddControllers();
             services.AddTokenAuthentication(Configuration);
             services.AddSwaggerGen(c =>
