@@ -155,7 +155,7 @@ namespace LicenseServer.Models
 
             await conn.QueryAsync(Resources.InsertIntoFusionRMSLicense, param, trans);
         }
-        private async Task<int> GetCustomerUserCount(UserInterfaceModel model)
+        public async Task<int> GetCustomerUserCount(UserInterfaceModel model)
         {
             var connectionStr = $"Data Source={model.LCFusionRMSLicense.SqlServerName};Initial Catalog={model.LCFusionRMSLicense.DataBaseName};Persist Security Info=True;User ID={model.LCFusionRMSLicense.SqlUser};Password={model.LCFusionRMSLicense.SqlPassword};";
             using (var conn = new SqlConnection(connectionStr))

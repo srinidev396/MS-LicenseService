@@ -32,25 +32,37 @@ namespace LicenseServer.Controllers
         {
             using (var conn = new SqlConnection(connectionStr))
             {
-                 await conn.QueryAsync<string>("SELECT * FROM sys.databases WHERE name = 'License'");
+                await conn.QueryAsync<string>("SELECT * FROM sys.databases WHERE name = 'License'");
             }
             return "Server is up and runnig!";
-        } 
+        }
         [HttpGet("GetListOfRegisterDatabases")]
         public async Task<LicenseDetails> GetListOfRegisterDatabases()
         {
             var lcd = new LicenseDetails();
             using (var conn = new SqlConnection(connectionStr))
             {
-                lcd.DatabasekeyList =  await conn.QueryAsync<DatabaseKeyList>("select Id as [Index], DatabaseKey as KeyName from LCFusionRMSLicense");
+                lcd.DatabasekeyList = await conn.QueryAsync<DatabaseKeyList>("select Id as [Index], DatabaseKey as KeyName from LCFusionRMSLicense");
             }
 
             return lcd;
         }
-        //[HttpGet("ValidateFusionRMSLicense")]
-        //public async Task<LicenseDetails> ValidateFusionRMSLicense(string key)
-        //{
+        [HttpGet("ValidateFusionRMSLicense")]
+        public async Task<LicenseDetails> ValidateFusionRMSLicense(string dbKeyname)
+        {
+            var lic = new LicenseDetails();
+            try
+            {
+                lic = await lic.GetLicenseProperties(connectionStr, dbKeyname);
+                lic = await lic.CheckConditions(lic);
+            }
+            catch (Exception ex)
+            {
+                lic.Valid = false;
+                lic.ErrorMsg = ex.Message;
+            }
             
-        //}
+            return lic;
+        }
     }
 }

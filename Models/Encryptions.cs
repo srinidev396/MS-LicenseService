@@ -22,7 +22,7 @@ namespace LicenseServer.Models
 {
     public class Encryptions
     {
-        public  const string  FusionRMSkeyEncryption = "TABsqlD2V77WTEKey";
+        public const string  FusionRMSkeyEncryption = "TABsqlD2V77WTEKey";
         public static string EncryptKey(string clearText, string encryKey)
         {
             try
