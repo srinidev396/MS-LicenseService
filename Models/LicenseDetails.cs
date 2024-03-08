@@ -29,6 +29,9 @@ namespace LicenseServer.Models
         public string LicenseKey { get; set; }
         public string DatabaseKey { get; set; }
         public string ProductName { get; set; }
+        public string Username { get; set; }
+        public bool IsSuccess { get; set; }
+        public string Origin { get; set; }
 
         public bool FLabelBlackwhite { get; set; }
         public bool FTabQuick { get; set; }
@@ -127,17 +130,5 @@ namespace LicenseServer.Models
     {
         public string Feature { get; set; }
         public bool Enable { get; set; }
-    }
-
-    public class LicenseLogger
-    {
-        public string Username { get; set; }
-        public string Product { get; set; }
-        public bool IsSuccess { get; set; }
-        public string AccountType { get; set; }
-        public string Origin { get; set; }
-        public DateTime DateCreated { get; set; }
-        public int CustomerId { get; set; }
-        public string DatabaseKey { get; set; }
     }
 }

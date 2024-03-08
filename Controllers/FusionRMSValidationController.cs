@@ -65,18 +65,18 @@ namespace LicenseServer.Controllers
             return lic;
         }
         [HttpPost("InsertUserLogs")]
-        public async Task InsertUserLogs(LicenseLogger model)
+        public async Task InsertUserLogs(LicenseDetails model)
         {
             using (var conn = new SqlConnection(connectionStr))
             {
                 var param = new {
                     @username = model.Username,
-                    @product = model.Product, 
+                    @product = model.ProductName, 
                     @issuccess = model.IsSuccess, 
-                    @accounttype = model.AccountType, 
+                    @accounttype = "", 
                     @origion = model.Origin,
                     @datecreated = DateTime.Now, 
-                    @customerid = model.CustomerId,
+                    @customerid = model.LCCustomersId,
                     @databasekey = model.DatabaseKey
                 };
               var rowaffected =  await conn.ExecuteAsync("" +
