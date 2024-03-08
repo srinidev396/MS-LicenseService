@@ -90,10 +90,10 @@ namespace LicenseServer.Models
 
             return lcmodel;
         }
-        public async Task<LicenseDetails> CheckConditions(LicenseDetails model)
+        public async Task<LicenseDetails> CheckConditions(string connctionstr, LicenseDetails model)
         {
             //chack active users
-            var activeusers = await GetCustomerUserCount(model);
+            var activeusers = await GetCustomerUserCount(connctionstr, model);
             if (activeusers > model.LicenseCount)
             {
                 model.Valid = false;
@@ -110,13 +110,23 @@ namespace LicenseServer.Models
             model.Valid = true;
             return model;
         }
-        private async Task<int> GetCustomerUserCount(LicenseDetails model)
+        private async Task<int> GetCustomerUserCount(string LicensedbConnectionStr,LicenseDetails model)
         {
             var connectionStr = $"Data Source={model.sqlservername};Initial Catalog={model.DatabaseName};Persist Security Info=True;User ID={model.sqlusername};Password={model.sqlpassword};";
+            int userCount = 0;   
             using (var conn = new SqlConnection(connectionStr))
             {
-                return await conn.ExecuteScalarAsync<int>("select count(UserID) from SecureUser");
+                userCount =  await conn.ExecuteScalarAsync<int>("select count(UserID) from SecureUser");
             }
+            //update active users
+            using (var conn1 = new SqlConnection(LicensedbConnectionStr))
+            {
+                var param = new { @activeuser = userCount, @databasekey = model.DatabaseKey };
+                await conn1.ExecuteAsync("update LCFusionRMSLicense set ActiveCount = @activeuser where DatabaseKey = @databasekey", param);
+            }
+            
+
+            return userCount;
         }
     }
 

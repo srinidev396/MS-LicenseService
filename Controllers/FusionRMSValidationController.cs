@@ -54,7 +54,7 @@ namespace LicenseServer.Controllers
             try
             {
                 lic = await lic.GetLicenseProperties(connectionStr, dbKeyname);
-                lic = await lic.CheckConditions(lic);
+                lic = await lic.CheckConditions(connectionStr, lic);
             }
             catch (Exception ex)
             {
@@ -82,6 +82,26 @@ namespace LicenseServer.Controllers
               var rowaffected =  await conn.ExecuteAsync("" +
                     "insert into LCUsersLog (UserName, Product, IsSuccess, AccountType, Origion, DateCreated, LCCustomersId, Databasekey)" +
                     "values(@username, @product, @issuccess, @accounttype, @origion, @datecreated, @customerid, @databasekey)", param);
+            }
+        }
+        [HttpGet("InsertFeaturelog")]
+        public async Task InsertFeaturelog(string username, string productname, string featurename, bool hasaccess, int customerid, string databasekey)
+        {
+            using (var conn = new SqlConnection(connectionStr))
+            {
+                var param = new
+                {
+                    @username = username,
+                    @datecreated = DateTime.Now,
+                    @productname = "TABFUSIONRMS",
+                    @featurename = featurename,
+                    @hasaccess = hasaccess,
+                    @customerid = customerid,
+                    @databasekey = databasekey
+                };
+                var rowaffected = await conn.ExecuteAsync("" +
+                      "insert into LCFeaturesLog (UserName, DateCreated, ProductName, FeatureName, HasAccess, LCCustomersId, Databasekey)" +
+                      "values(@username,@datecreated,@productname,@featurename, @hasaccess,  @customerid, @databasekey)", param);
             }
         }
     }
