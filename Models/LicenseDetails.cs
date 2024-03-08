@@ -128,4 +128,16 @@ namespace LicenseServer.Models
         public string Feature { get; set; }
         public bool Enable { get; set; }
     }
+
+    public class LicenseLogger
+    {
+        public string Username { get; set; }
+        public string Product { get; set; }
+        public bool IsSuccess { get; set; }
+        public string AccountType { get; set; }
+        public string Origin { get; set; }
+        public DateTime DateCreated { get; set; }
+        public int CustomerId { get; set; }
+        public string DatabaseKey { get; set; }
+    }
 }
