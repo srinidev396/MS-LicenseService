@@ -5,7 +5,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>LicenseServer</ActiveDebugProfile>
-    <NameOfLastUsedPublishProfile>D:\Codes\Fusion11.1\FusionRMS-Microservices\LicenseServer\MicroService\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\Codes\Tab\MS-LicenseService\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
     <Controller_SelectedScaffolderID>ApiControllerEmptyScaffolder</Controller_SelectedScaffolderID>
     <Controller_SelectedScaffolderCategoryPath>root/Common/Api</Controller_SelectedScaffolderCategoryPath>
   </PropertyGroup>

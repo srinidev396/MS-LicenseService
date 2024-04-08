@@ -87,22 +87,30 @@ namespace LicenseServer.Controllers
         [HttpGet("InsertFeaturelog")]
         public async Task InsertFeaturelog(string username, string productname, string featurename, bool hasaccess, int customerid, string databasekey)
         {
-            using (var conn = new SqlConnection(connectionStr))
+            try
             {
-                var param = new
+                using (var conn = new SqlConnection(connectionStr))
                 {
-                    @username = username,
-                    @datecreated = DateTime.Now,
-                    @productname = "TABFUSIONRMS",
-                    @featurename = featurename,
-                    @hasaccess = hasaccess,
-                    @customerid = customerid,
-                    @databasekey = databasekey
-                };
-                var rowaffected = await conn.ExecuteAsync("" +
-                      "insert into LCFeaturesLog (UserName, DateCreated, ProductName, FeatureName, HasAccess, LCCustomersId, Databasekey)" +
-                      "values(@username,@datecreated,@productname,@featurename, @hasaccess,  @customerid, @databasekey)", param);
+                    var param = new
+                    {
+                        @username = username,
+                        @datecreated = DateTime.Now,
+                        @productname = "TABFUSIONRMS",
+                        @featurename = featurename,
+                        @hasaccess = hasaccess,
+                        @customerid = customerid,
+                        @databasekey = databasekey
+                    };
+                    var rowaffected = await conn.ExecuteAsync("" +
+                          "insert into LCFeaturesLog (UserName, DateCreated, ProductName, FeatureName, HasAccess, LCCustomersId, Databasekey)" +
+                          "values(@username,@datecreated,@productname,@featurename, @hasaccess,  @customerid, @databasekey)", param);
+                }
             }
+            catch (Exception ex)
+            {
+                var x = ex.Message;
+            }
+            
         }
     }
 }

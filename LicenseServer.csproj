@@ -5,7 +5,7 @@
     <!--<Platforms>AnyCPU;x86;ARM32</Platforms>-->
     <AssemblyName>LicenseServer</AssemblyName>
     <PlatformTarget>AnyCPU</PlatformTarget>
-    <BaseOutputPath>\Resources\MicroServices</BaseOutputPath>
+    <BaseOutputPath></BaseOutputPath>
       <OutputPath>..\Resources\MicroServices\LicenseService</OutputPath>
   </PropertyGroup>
 
