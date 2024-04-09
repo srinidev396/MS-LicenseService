@@ -37,7 +37,7 @@
 
   <ItemGroup>
     <Reference Include="Smead.Security">
-      <HintPath>..\FS-WebAccess\Smead.SecurityCS\bin\Debug\net8.0\Smead.Security.dll</HintPath>
+      <HintPath>..\Resources\Assemblies\FusionAssemblies\Debug\net8.0\Smead.Security.dll</HintPath>
     </Reference>
   </ItemGroup>
 

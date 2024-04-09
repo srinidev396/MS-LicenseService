@@ -47,6 +47,7 @@ namespace LicenseServer
             {
                 loggingBuilder.ClearProviders();
                 loggingBuilder.AddNLog();
+                loggingBuilder.AddConsole();
             });
 
             services.AddControllers();
