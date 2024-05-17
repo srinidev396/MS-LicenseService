@@ -112,5 +112,21 @@ namespace LicenseServer.Controllers
             }
             
         }
+        [HttpGet("GetAllCustomerDatabases")]
+        public async Task<List<LicenseDetails>> GetAllCustomerDatabases()
+        {
+            var lcd = new LicenseDetails();
+            var lcds = new List<LicenseDetails>();
+            using (var conn = new SqlConnection(connectionStr))
+            {
+                lcd.DatabasekeyList = await conn.QueryAsync<DatabaseKeyList>("select Id as [Index], DatabaseKey as KeyName from LCFusionRMSLicense");
+            }
+            foreach (var item in lcd.DatabasekeyList)
+            {
+                var dbdetails = await lcd.GetLicenseProperties(connectionStr, item.KeyName);
+                lcds.Add(await lcd.CheckConditions(connectionStr, dbdetails));
+            }
+            return lcds;
+        }
     }
 }
