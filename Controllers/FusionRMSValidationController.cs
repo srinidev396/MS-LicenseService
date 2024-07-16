@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using LicenseServer.Models;
 using System;
 using System.Xml.Linq;
+using Microsoft.AspNetCore.Hosting.Server;
+using System.ComponentModel;
 
 namespace LicenseServer.Controllers
 {
@@ -34,7 +36,8 @@ namespace LicenseServer.Controllers
             {
                 await conn.QueryAsync<string>("SELECT * FROM sys.databases WHERE name = 'License'");
             }
-            return "Server is up and runnig!";
+            _logger.LogInformation("License Server is up and runnig!");
+            return "License Server is up and runnig!";
         }
         [HttpGet("GetListOfRegisterDatabases")]
         public async Task<LicenseDetails> GetListOfRegisterDatabases()
