@@ -1,0 +1,77 @@
+{
+  "Version": 1,
+  "Hash": "KErbW8aAbV4MfD3wR457rmvDJAhO7uWov6jsr6wN72o=",
+  "Source": "LicenseServer",
+  "BasePath": "_content/LicenseServer",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "LicenseServer\\wwwroot",
+      "Source": "LicenseServer",
+      "ContentRoot": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\",
+      "BasePath": "_content/LicenseServer",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\swagger-custom\\swagger-custom-script.js",
+      "SourceId": "LicenseServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\",
+      "BasePath": "_content/LicenseServer",
+      "RelativePath": "swagger-custom/swagger-custom-script.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-custom\\swagger-custom-script.js"
+    },
+    {
+      "Identity": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\swagger-custom\\swagger-custom-style.css",
+      "SourceId": "LicenseServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\",
+      "BasePath": "_content/LicenseServer",
+      "RelativePath": "swagger-custom/swagger-custom-style.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\swagger-custom\\swagger-custom-style.css"
+    },
+    {
+      "Identity": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\TabFusion.png",
+      "SourceId": "LicenseServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\",
+      "BasePath": "_content/LicenseServer",
+      "RelativePath": "TabFusion.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\TabFusion.png"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\TabFusion.png",
+      "PackagePath": "staticwebassets\\TabFusion.png"
+    },
+    {
+      "Id": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\swagger-custom\\swagger-custom-script.js",
+      "PackagePath": "staticwebassets\\swagger-custom\\swagger-custom-script.js"
+    },
+    {
+      "Id": "C:\\Srinivas\\MS_Code\\licenseServer\\wwwroot\\swagger-custom\\swagger-custom-style.css",
+      "PackagePath": "staticwebassets\\swagger-custom\\swagger-custom-style.css"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.LicenseServer.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.LicenseServer.props",
+      "PackagePath": "build\\LicenseServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.LicenseServer.props",
+      "PackagePath": "buildMultiTargeting\\LicenseServer.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.LicenseServer.props",
+      "PackagePath": "buildTransitive\\LicenseServer.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

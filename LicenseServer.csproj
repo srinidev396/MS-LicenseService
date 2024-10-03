@@ -21,6 +21,195 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="obj\Debug\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Debug\net8.0\LicenseServer.AssemblyInfo.cs" />
+    <Compile Include="obj\Debug\net8.0\LicenseServer.MvcApplicationPartsAssemblyInfo.cs" />
+    <Compile Include="obj\Release\net8.0\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\net8.0\LicenseServer.AssemblyInfo.cs" />
+    <Compile Include="obj\Release\net8.0\LicenseServer.MvcApplicationPartsAssemblyInfo.cs" />
+    <Compile Include="obj\Release\net8.0\linux-x64\.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\net8.0\linux-x64\LicenseServer.AssemblyInfo.cs" />
+    <Compile Include="obj\Release\net8.0\linux-x64\LicenseServer.MvcApplicationPartsAssemblyInfo.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="obj\Debug\net8.0\LicenseServer.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\net8.0\LicenseServer.sourcelink.json" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.build.json" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.development.json" />
+    <Content Include="obj\Debug\net8.0\staticwebassets.pack.json" />
+    <Content Include="obj\LicenseServer.csproj.nuget.dgspec.json" />
+    <Content Include="obj\project.assets.json" />
+    <Content Include="obj\publish\linux-x64\LicenseServer.csproj.nuget.dgspec.json" />
+    <Content Include="obj\publish\linux-x64\project.assets.json" />
+    <Content Include="obj\Release\net8.0\LicenseServer.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\net8.0\LicenseServer.sourcelink.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\LicenseServer.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\net8.0\linux-x64\LicenseServer.sourcelink.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\PublishOutputs.7aefc4cc71.txt" />
+    <Content Include="obj\Release\net8.0\linux-x64\PubTmp\Out\appsettings.Development.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\PubTmp\Out\appsettings.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\PubTmp\Out\LicenseServer.deps.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\PubTmp\Out\LicenseServer.runtimeconfig.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\PubTmp\Out\wwwroot\swagger-custom\swagger-custom-style.css" />
+    <Content Include="obj\Release\net8.0\linux-x64\PubTmp\Out\wwwroot\TabFusion.png" />
+    <Content Include="obj\Release\net8.0\linux-x64\staticwebassets.build.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\staticwebassets.development.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\staticwebassets.pack.json" />
+    <Content Include="obj\Release\net8.0\linux-x64\staticwebassets.publish.json" />
+    <Content Include="obj\Release\net8.0\PublishOutputs.4252b37872.txt" />
+    <Content Include="obj\Release\net8.0\PubTmp\Out\appsettings.Development.json" />
+    <Content Include="obj\Release\net8.0\PubTmp\Out\appsettings.json" />
+    <Content Include="obj\Release\net8.0\PubTmp\Out\LicenseServer.deps.json" />
+    <Content Include="obj\Release\net8.0\PubTmp\Out\LicenseServer.runtimeconfig.json" />
+    <Content Include="obj\Release\net8.0\PubTmp\Out\wwwroot\swagger-custom\swagger-custom-style.css" />
+    <Content Include="obj\Release\net8.0\PubTmp\Out\wwwroot\TabFusion.png" />
+    <Content Include="obj\Release\net8.0\staticwebassets.build.json" />
+    <Content Include="obj\Release\net8.0\staticwebassets.development.json" />
+    <Content Include="obj\Release\net8.0\staticwebassets.pack.json" />
+    <Content Include="obj\Release\net8.0\staticwebassets.publish.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="obj\Debug\net8.0\apphost.exe" />
+    <None Include="obj\Debug\net8.0\LicenseServer.AssemblyInfoInputs.cache" />
+    <None Include="obj\Debug\net8.0\LicenseServer.assets.cache" />
+    <None Include="obj\Debug\net8.0\LicenseServer.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\net8.0\LicenseServer.csproj.BuildWithSkipAnalyzers" />
+    <None Include="obj\Debug\net8.0\LicenseServer.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\net8.0\LicenseServer.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\net8.0\LicenseServer.dll" />
+    <None Include="obj\Debug\net8.0\LicenseServer.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Debug\net8.0\LicenseServer.genruntimeconfig.cache" />
+    <None Include="obj\Debug\net8.0\LicenseServer.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Debug\net8.0\LicenseServer.pdb" />
+    <None Include="obj\Debug\net8.0\LicenseServer.Properties.Resources.resources" />
+    <None Include="obj\Debug\net8.0\refint\LicenseServer.dll" />
+    <None Include="obj\Debug\net8.0\ref\LicenseServer.dll" />
+    <None Include="obj\Debug\net8.0\staticwebassets\msbuild.build.LicenseServer.props" />
+    <None Include="obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.LicenseServer.props" />
+    <None Include="obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.LicenseServer.props" />
+    <None Include="obj\Debug\net8.0\staticwebassets\msbuild.LicenseServer.Microsoft.AspNetCore.StaticWebAssets.props" />
+    <None Include="obj\LicenseServer.csproj.nuget.g.props" />
+    <None Include="obj\LicenseServer.csproj.nuget.g.targets" />
+    <None Include="obj\project.nuget.cache" />
+    <None Include="obj\publish\linux-x64\LicenseServer.csproj.nuget.g.props" />
+    <None Include="obj\publish\linux-x64\LicenseServer.csproj.nuget.g.targets" />
+    <None Include="obj\publish\linux-x64\project.nuget.cache" />
+    <None Include="obj\Release\net8.0\apphost.exe" />
+    <None Include="obj\Release\net8.0\LicenseServer.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\net8.0\LicenseServer.assets.cache" />
+    <None Include="obj\Release\net8.0\LicenseServer.csproj.AssemblyReference.cache" />
+    <None Include="obj\Release\net8.0\LicenseServer.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\net8.0\LicenseServer.csproj.GenerateResource.cache" />
+    <None Include="obj\Release\net8.0\LicenseServer.dll" />
+    <None Include="obj\Release\net8.0\LicenseServer.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Release\net8.0\LicenseServer.genruntimeconfig.cache" />
+    <None Include="obj\Release\net8.0\LicenseServer.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Release\net8.0\LicenseServer.pdb" />
+    <None Include="obj\Release\net8.0\LicenseServer.Properties.Resources.resources" />
+    <None Include="obj\Release\net8.0\linux-x64\apphost" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseS.F949CA3A.Up2Date" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.AssemblyInfoInputs.cache" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.assets.cache" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.csproj.AssemblyReference.cache" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.csproj.GenerateResource.cache" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.GeneratedMSBuildEditorConfig.editorconfig" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.genruntimeconfig.cache" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.MvcApplicationPartsAssemblyInfo.cache" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.pdb" />
+    <None Include="obj\Release\net8.0\linux-x64\LicenseServer.Properties.Resources.resources" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\LicenseServer-20241001212415873.zip" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\LicenseServer-20241001224839246.zip" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\LicenseServer-20241002170602407.zip" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Dapper.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\LicenseServer" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\LicenseServer.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\LicenseServer.pdb" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.Logging.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Microsoft.OpenApi.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Newtonsoft.Json.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\NLog.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\NLog.Extensions.Logging.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Smead.Security.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\System.Configuration.ConfigurationManager.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\System.Data.SqlClient.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\System.DirectoryServices.AccountManagement.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\System.DirectoryServices.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\System.DirectoryServices.Protocols.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\PubTmp\Out\wwwroot\swagger-custom\swagger-custom-script.js" />
+    <None Include="obj\Release\net8.0\linux-x64\refint\LicenseServer.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\ref\LicenseServer.dll" />
+    <None Include="obj\Release\net8.0\linux-x64\staticwebassets\msbuild.build.LicenseServer.props" />
+    <None Include="obj\Release\net8.0\linux-x64\staticwebassets\msbuild.buildMultiTargeting.LicenseServer.props" />
+    <None Include="obj\Release\net8.0\linux-x64\staticwebassets\msbuild.buildTransitive.LicenseServer.props" />
+    <None Include="obj\Release\net8.0\linux-x64\staticwebassets\msbuild.LicenseServer.Microsoft.AspNetCore.StaticWebAssets.props" />
+    <None Include="obj\Release\net8.0\PubTmp\LicenseServer-20241001145314252.zip" />
+    <None Include="obj\Release\net8.0\PubTmp\LicenseServer-20241002165204093.zip" />
+    <None Include="obj\Release\net8.0\PubTmp\LicenseServer-20241002165436761.zip" />
+    <None Include="obj\Release\net8.0\PubTmp\LicenseServer-20241002170351012.zip" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Dapper.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\LicenseServer.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\LicenseServer.exe" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\LicenseServer.pdb" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.AspNetCore.Authentication.JwtBearer.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Abstractions.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.JsonWebTokens.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Logging.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.IdentityModel.Tokens.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Microsoft.OpenApi.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Newtonsoft.Json.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\NLog.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\NLog.Extensions.Logging.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\linux\lib\net8.0\System.DirectoryServices.Protocols.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\osx\lib\net8.0\System.DirectoryServices.Protocols.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\win-x64\native\sni.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\win-x86\native\sni.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\win\lib\net8.0\System.DirectoryServices.AccountManagement.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\win\lib\net8.0\System.DirectoryServices.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\win\lib\net8.0\System.DirectoryServices.Protocols.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Smead.Security.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\System.Data.SqlClient.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\System.DirectoryServices.AccountManagement.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\System.DirectoryServices.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\System.DirectoryServices.Protocols.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\System.IdentityModel.Tokens.Jwt.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\web.config" />
+    <None Include="obj\Release\net8.0\PubTmp\Out\wwwroot\swagger-custom\swagger-custom-script.js" />
+    <None Include="obj\Release\net8.0\refint\LicenseServer.dll" />
+    <None Include="obj\Release\net8.0\ref\LicenseServer.dll" />
+    <None Include="obj\Release\net8.0\staticwebassets\msbuild.build.LicenseServer.props" />
+    <None Include="obj\Release\net8.0\staticwebassets\msbuild.buildMultiTargeting.LicenseServer.props" />
+    <None Include="obj\Release\net8.0\staticwebassets\msbuild.buildTransitive.LicenseServer.props" />
+    <None Include="obj\Release\net8.0\staticwebassets\msbuild.LicenseServer.Microsoft.AspNetCore.StaticWebAssets.props" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.28" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.1" />
     <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
@@ -37,7 +226,7 @@
 
   <ItemGroup>
     <Reference Include="Smead.Security">
-      <HintPath>..\Resources\Assemblies\FusionAssemblies\Release\net8.0\Smead.Security.dll</HintPath>
+      <HintPath>..\..\..\Repo\Tab\Resources_0809\Assemblies\FusionAssemblies\Release\net8.0\Smead.Security.dll</HintPath>
     </Reference>
   </ItemGroup>
 
